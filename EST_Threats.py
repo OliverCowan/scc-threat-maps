@@ -23,7 +23,7 @@ arcpy.env.workspace = gdb_dir
 EST_data = os.path.join(input_dir, "Species_AllSens_Clean_No_Birds.shp")
 arcpy.MakeFeatureLayer_management(EST_data, "EST_Species_Layer")
 
-# dissolve boundaries so that for each species there ia one multipart polygon
+# dissolve boundaries so that for each species there is a multipart polygon
 arcpy.Dissolve_management("EST_Species_Layer", "EST_Species_Dissolved", "Scntf_N", "", "MULTI_PART", "DISSOLVE_LINES")
 
 # Add Threat Data and convert from excel to GDB table for further analysis
